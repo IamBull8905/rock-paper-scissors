@@ -1,3 +1,6 @@
+let humanScore = 0
+let computerScore = 0
+
 function getComputerChoice() {
     let randNum = Math.random()
     if (randNum > 2/3) {
