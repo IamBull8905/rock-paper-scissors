@@ -8,3 +8,8 @@ function getComputerChoice() {
         return "Paper"
     }
 }
+
+function getHumanChoice() {
+    let choice = prompt("Would you like to play Rock, Paper or Scissors? ")
+    return choice
+}
