@@ -1,1 +1,2 @@
 # rock-paper-scissors
+This is project three in TOP curriculum and this particular project allowed me to understand the programming fundamentals of javascript and make a rock, paper, scissors game, that is fully playable by the console only! 
