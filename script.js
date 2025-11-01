@@ -1,3 +1,5 @@
+const buttons = document.querySelectorAll("button");
+
 function getComputerChoice() {
     let randNum = Math.random();
     if (randNum > 2/3) {
@@ -6,13 +8,9 @@ function getComputerChoice() {
         return "paper";
     } else {
         return "scissors";
-    }
-}
+    };
+};
 
-function getHumanChoice() {
-    let choice = prompt("Would you like to play Rock, Paper or Scissors? ");
-    return choice;
-}
 
 function playGame() {
     let humanScore = 0;
@@ -41,15 +39,17 @@ function playGame() {
             console.log("You lose. (Scissors beats paper)");
         } else {
             return "Invalid input";
-        }
-    }
-    for (let i = 0; i < 5; i++) {
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection);
-    }
-    console.log(`The computer scored: ${computerScore}`);
-    console.log(`You scored ${humanScore}`);
-}
+        };
+    };
+        buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+        let humanChoice = button.className;
+        playRound(humanChoice, getComputerChoice());
+        });
+    });
+
+    //console.log(`The computer scored: ${computerScore}`);
+    //console.log(`You scored ${humanScore}`);
+};
 
 playGame();
