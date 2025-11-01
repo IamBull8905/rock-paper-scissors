@@ -1,0 +1,28 @@
+body {
+    background-image: url(./images-&-icons/background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.player-buttons{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 15px;
+}
+
+button{
+    background-color: #8993ff;
+    opacity: 0.8;
+    border: none;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+.icon {
+    height: 75px;
+    width: 75px;
+}
