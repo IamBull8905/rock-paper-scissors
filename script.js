@@ -1,14 +1,26 @@
 const buttons = document.querySelectorAll("button");
+const container = document.querySelector("#computer-cards");
+
 
 function getComputerChoice() {
+    const existingImg = container.querySelector("img.comp-card");
+    existingImg ? existingImg.remove() : null;
+    let compChoice = "";
     let randNum = Math.random();
+    const img = document.createElement("img");
+    img.classList.add("comp-card");
     if (randNum > 2/3) {
-        return "rock";
+        img.src = "./images-&-icons/ROCK.png";
+        compChoice = "rock";
     } else if (randNum > 1/3) {
-        return "paper";
+        img.src = "./images-&-icons/PAPER.png";
+        compChoice = "paper";
     } else {
-        return "scissors";
+        img.src = "./images-&-icons/SCISSORS.png";
+        compChoice = "scissors";
     };
+    container.appendChild(img);
+    return compChoice;
 };
 
 
