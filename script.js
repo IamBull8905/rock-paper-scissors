@@ -1,5 +1,6 @@
 const buttons = document.querySelectorAll("button");
 const container = document.querySelector("#computer-cards");
+const container2 = document.querySelector("#player-cards");
 
 
 function getComputerChoice() {
@@ -10,17 +11,32 @@ function getComputerChoice() {
     const img = document.createElement("img");
     img.classList.add("comp-card");
     if (randNum > 2/3) {
-        img.src = "./images-&-icons/ROCK.png";
+        img.src = "./images-&-icons/mount-fuji.png";
         compChoice = "rock";
     } else if (randNum > 1/3) {
-        img.src = "./images-&-icons/PAPER.png";
+        img.src = "./images-&-icons/washi.png";
         compChoice = "paper";
     } else {
-        img.src = "./images-&-icons/SCISSORS.png";
+        img.src = "./images-&-icons/katana.png";
         compChoice = "scissors";
     };
     container.appendChild(img);
     return compChoice;
+};
+
+function createHumanChoiceCard(choice) {
+    const currentCard = container2.querySelector("img.player-card");
+    currentCard ? currentCard.remove() : null;
+    const img = document.createElement("img");
+    img.classList.add("player-card");
+    if (choice === "rock") {
+        img.src = "./images-&-icons/mount-fuji.png";
+    } else if (choice === "paper") {
+        img.src = "./images-&-icons/washi.png";
+    } else {
+        img.src = "./images-&-icons/katana.png";
+    };
+    container2.appendChild(img);
 };
 
 
@@ -56,6 +72,7 @@ function playGame() {
         buttons.forEach((button) => {
         button.addEventListener("click", () => {
         let humanChoice = button.className;
+        createHumanChoiceCard(humanChoice);
         playRound(humanChoice, getComputerChoice());
         });
     });
