@@ -71,3 +71,19 @@ button{
     height: 75px;
     border-radius: 25px;
 }
+
+.results-text{
+    font-size: 24px;
+}
+
+#scores {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(253, 188, 255, 0.648);
+    padding: 10px 15px;
+    border-radius: 10px;
+}
